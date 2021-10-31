@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="images\C1.jpg" />
+    <None Remove="images\C2.jpg" />
+    <None Remove="images\C3.jpg" />
+    <None Remove="images\C4.jpg" />
+    <None Remove="images\J1.jpg" />
+    <None Remove="images\J2.jpg" />
+    <None Remove="images\J3.jpg" />
+    <None Remove="images\K1.jpg" />
+    <None Remove="images\K2.jpg" />
+    <None Remove="images\K3.jpg" />
+    <None Remove="images\T1.jpg" />
+    <None Remove="images\T2.jpg" />
+    <None Remove="images\T3.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\C1.jpg" />
+    <Resource Include="images\C2.jpg" />
+    <Resource Include="images\C3.jpg" />
+    <Resource Include="images\C4.jpg" />
+    <Resource Include="images\J1.jpg" />
+    <Resource Include="images\J2.jpg" />
+    <Resource Include="images\J3.jpg" />
+    <Resource Include="images\K1.jpg" />
+    <Resource Include="images\K2.jpg" />
+    <Resource Include="images\K3.jpg" />
+    <Resource Include="images\T1.jpg" />
+    <Resource Include="images\T2.jpg" />
+    <Resource Include="images\T3.jpg" />
+  </ItemGroup>
+
+</Project>
