@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -11,19 +12,19 @@ namespace GuessingGame
     {
         #region Private members
 
-        private readonly string currentDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + "\\images\\";
+        private static string currentDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + "\\images\\";
         private int currenIndex = 0;
         private int currentPoints = 0;
         private bool buttonClicked;
-
+        private bool endGame;
+        private List<Person> personList = PersonUtils.FillPersonList(currentDirectory, ".jpg");
         #endregion
 
         #region Default constructor
         public GuessingGame()
         {
             InitializeComponent();
-            AddImagesToList();
-            NewGame(ref currentPoints);
+            NewGame();
         }
 
         #endregion
@@ -31,37 +32,22 @@ namespace GuessingGame
         #region Custom methods
 
         // Starts a new game and clears old results
-        private void NewGame(ref int points)
+        private void NewGame()
         {
             playAgainButton.Visible = false;
             currenIndex = 0;
             currentPoints = 0;
             pointsBox.Text = String.Empty;
+            endGame = false;
             LoadNextPicture(ref currenIndex);
         }
-
-        // Adds Pictures to image list and shuffles them
-        private void AddImagesToList()
-        {
-            string[] images = Directory.GetFiles(currentDirectory, "*.jpg");
-            Random random = new Random();
-            images = images.OrderBy(x => random.Next()).ToArray();
-            foreach (var image in images)
-            {
-                //key holds the info about nationality of the person on the picture
-                //which is dependent on the name of the image
-                string key = image.Replace(currentDirectory, "").Replace(".jpg", "");
-                imageList1.Images.Add(key, new Bitmap(image));
-            }
-        }
-   
-        // Loads next picture from image list or ends game if last picture was already loaded
+        // Loads next picture from person list or ends game if last picture was already loaded
         private void LoadNextPicture(ref int index)
         {
-            if (index < imageList1.Images.Count)
+            if (index < personList.Count)
             {
                 pictureBox1.Location = new System.Drawing.Point(244, 1);
-                pictureBox1.Image = imageList1.Images[index];
+                pictureBox1.Image = personList[index].Image;
                 index++;
             }
             else
@@ -69,6 +55,7 @@ namespace GuessingGame
                 pointsBox.Text = $"You have {currentPoints} Points";
                 pictureBox1.Image = null;
                 playAgainButton.Visible = true;
+                endGame = true;
                 return;
             }
         }
@@ -76,11 +63,11 @@ namespace GuessingGame
         // Manages point system
         private void ResolvePoints(ref int index, Button button)
         {
-            if (index == imageList1.Images.Count)
+            if (index == personList.Count)
             {       
-                    //compares images key and buttons tag to check if answer is correct
-                    //tags contain first letter of the country they represent, exmpl: 'J' for Japan
-                if (imageList1.Images.Keys[index - 1].Substring(0, 1).Equals(button.Tag.ToString(), StringComparison.Ordinal))
+                    //compares images country code and buttons tag to check if answer is correct
+                    //tag contains first letter of the country it represents, exmpl: 'J' for Japanese button
+                if (personList[index-1].Country.Substring(0, 1).Equals(button.Tag.ToString(), StringComparison.Ordinal))
                 {
                     currentPoints += 20;
                     pointsBox.Text = $"You have {currentPoints} Points";
@@ -94,11 +81,12 @@ namespace GuessingGame
                 }
                 pictureBox1.Image = null;
                 playAgainButton.Visible = true;
+                endGame = true;
                 return;
             }
 
 
-            if (imageList1.Images.Keys[index - 1].Substring(0, 1).Equals(button.Tag.ToString(), StringComparison.Ordinal))
+            if (personList[index-1].Country.Substring(0, 1).Equals(button.Tag.ToString(), StringComparison.Ordinal))
             {
                 currentPoints += 20;
                 pointsBox.Text = $"You have {currentPoints} Points";
@@ -115,12 +103,7 @@ namespace GuessingGame
         #endregion
 
         #region Event handlers
-        private void GuessingGame_Load(object sender, EventArgs e)
-        {
-            this.BackColor = Color.White;
-            playAgainButton.Visible = false;
-
-        }
+        private void GuessingGame_Load(object sender, EventArgs e) {}
 
         private void pictureChange_Tick(object sender, EventArgs e)
         {
@@ -139,6 +122,8 @@ namespace GuessingGame
 
         private void JapaneseButton_Click(object sender, EventArgs e)
         {
+            if (endGame)
+                return;
             buttonClicked = true;
             ResolvePoints(ref currenIndex, JapaneseButton);
         }
@@ -146,18 +131,24 @@ namespace GuessingGame
 
         private void ChineseButton_Click(object sender, EventArgs e)
         {
+            if (endGame)
+                return;
             buttonClicked = true;
             ResolvePoints(ref currenIndex, ChineseButton);
         }
 
         private void KoreanButton_Click(object sender, EventArgs e)
         {
+            if (endGame)
+                return;
             buttonClicked = true;
             ResolvePoints(ref currenIndex, KoreanButton);
         }
 
         private void ThaiButton_Click(object sender, EventArgs e)
         {
+            if (endGame)
+                return;
             buttonClicked = true;
             ResolvePoints(ref currenIndex, ThaiButton);
         }
@@ -165,7 +156,7 @@ namespace GuessingGame
         
         private void playAgainButton_Click(object sender, EventArgs e)
         {
-            NewGame(ref currentPoints);
+            NewGame();
         }
         #endregion
 
