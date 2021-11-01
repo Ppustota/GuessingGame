@@ -34,7 +34,6 @@ namespace GuessingGame
             this.ChineseButton = new System.Windows.Forms.Button();
             this.KoreanButton = new System.Windows.Forms.Button();
             this.ThaiButton = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureChange = new System.Windows.Forms.Timer(this.components);
             this.pictureMove = new System.Windows.Forms.Timer(this.components);
@@ -86,12 +85,6 @@ namespace GuessingGame
             this.ThaiButton.Text = "Thai";
             this.ThaiButton.UseVisualStyleBackColor = true;
             this.ThaiButton.Click += new System.EventHandler(this.ThaiButton_Click);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(256, 256);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // pictureBox1
             // 
@@ -169,7 +162,6 @@ namespace GuessingGame
         private System.Windows.Forms.Button ChineseButton;
         private System.Windows.Forms.Button KoreanButton;
         private System.Windows.Forms.Button ThaiButton;
-        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer pictureChange;
         private System.Windows.Forms.Timer pictureMove;
