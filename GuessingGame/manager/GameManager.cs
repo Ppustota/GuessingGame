@@ -55,7 +55,7 @@ namespace GuessingGame.manager
             }
         }
         //Responses to users answers
-        public void OnButtonClick(Button button, ref bool clicked)
+        public void OnUsersAnswer(Button button, ref bool clicked)
         {
             if (EndGame)
                 return;

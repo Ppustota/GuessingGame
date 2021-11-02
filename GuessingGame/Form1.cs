@@ -50,23 +50,23 @@ namespace GuessingGame
 
         private void JapaneseButton_Click(object sender, EventArgs e)
         {
-            gameManager.OnButtonClick(JapaneseButton, ref buttonClicked);
+            gameManager.OnUsersAnswer(JapaneseButton, ref buttonClicked);
         }
 
 
         private void ChineseButton_Click(object sender, EventArgs e)
         {
-            gameManager.OnButtonClick(ChineseButton, ref buttonClicked);
+            gameManager.OnUsersAnswer(ChineseButton, ref buttonClicked);
         }
 
         private void KoreanButton_Click(object sender, EventArgs e)
         {
-            gameManager.OnButtonClick(KoreanButton, ref buttonClicked);
+            gameManager.OnUsersAnswer(KoreanButton, ref buttonClicked);
         }
 
         private void ThaiButton_Click(object sender, EventArgs e)
         {
-            gameManager.OnButtonClick(ThaiButton, ref buttonClicked);
+            gameManager.OnUsersAnswer(ThaiButton, ref buttonClicked);
         }
 
         private void playAgainButton_Click(object sender, EventArgs e)
