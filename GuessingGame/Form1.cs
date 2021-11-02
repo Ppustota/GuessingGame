@@ -19,8 +19,10 @@ namespace GuessingGame
          public GuessingGame()
         {
             InitializeComponent();
-            gameManager = new GameManager(PersonUtils.FillPersonList(currentDirectory, ".jpg"), pictureBox1, playAgainButton, pointsBox);
-            
+            gameManager = new GameManager(personList: PersonUtils.FillPersonList(currentDirectory, ".jpg"), 
+                                          pictureBox: pictureBox1, 
+                                          playAgain: playAgainButton, 
+                                          pointsBox: pointsBox); 
         }
 
         #endregion
@@ -48,23 +50,23 @@ namespace GuessingGame
 
         private void JapaneseButton_Click(object sender, EventArgs e)
         {
-            gameManager.ButtonClick(JapaneseButton, ref buttonClicked);
+            gameManager.OnButtonClick(JapaneseButton, ref buttonClicked);
         }
-        
+
 
         private void ChineseButton_Click(object sender, EventArgs e)
         {
-            gameManager.ButtonClick(ChineseButton, ref buttonClicked);
+            gameManager.OnButtonClick(ChineseButton, ref buttonClicked);
         }
 
         private void KoreanButton_Click(object sender, EventArgs e)
         {
-            gameManager.ButtonClick(KoreanButton, ref buttonClicked);
+            gameManager.OnButtonClick(KoreanButton, ref buttonClicked);
         }
 
         private void ThaiButton_Click(object sender, EventArgs e)
         {
-            gameManager.ButtonClick(ThaiButton, ref buttonClicked);
+            gameManager.OnButtonClick(ThaiButton, ref buttonClicked);
         }
 
         private void playAgainButton_Click(object sender, EventArgs e)
