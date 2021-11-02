@@ -48,7 +48,7 @@ namespace GuessingGame
             this.JapaneseButton.Name = "JapaneseButton";
             this.JapaneseButton.Size = new System.Drawing.Size(75, 23);
             this.JapaneseButton.TabIndex = 0;
-            this.JapaneseButton.Tag = "J";
+            this.JapaneseButton.Tag = "Japanese";
             this.JapaneseButton.Text = "Japanese";
             this.JapaneseButton.UseVisualStyleBackColor = true;
             this.JapaneseButton.Click += new System.EventHandler(this.JapaneseButton_Click);
@@ -59,7 +59,7 @@ namespace GuessingGame
             this.ChineseButton.Name = "ChineseButton";
             this.ChineseButton.Size = new System.Drawing.Size(75, 23);
             this.ChineseButton.TabIndex = 1;
-            this.ChineseButton.Tag = "C";
+            this.ChineseButton.Tag = "Chinese";
             this.ChineseButton.Text = "Chinese";
             this.ChineseButton.UseVisualStyleBackColor = true;
             this.ChineseButton.Click += new System.EventHandler(this.ChineseButton_Click);
@@ -70,7 +70,7 @@ namespace GuessingGame
             this.KoreanButton.Name = "KoreanButton";
             this.KoreanButton.Size = new System.Drawing.Size(75, 23);
             this.KoreanButton.TabIndex = 2;
-            this.KoreanButton.Tag = "K";
+            this.KoreanButton.Tag = "Korean";
             this.KoreanButton.Text = "Korean";
             this.KoreanButton.UseVisualStyleBackColor = true;
             this.KoreanButton.Click += new System.EventHandler(this.KoreanButton_Click);
@@ -81,7 +81,7 @@ namespace GuessingGame
             this.ThaiButton.Name = "ThaiButton";
             this.ThaiButton.Size = new System.Drawing.Size(75, 23);
             this.ThaiButton.TabIndex = 3;
-            this.ThaiButton.Tag = "T";
+            this.ThaiButton.Tag = "Thai";
             this.ThaiButton.Text = "Thai";
             this.ThaiButton.UseVisualStyleBackColor = true;
             this.ThaiButton.Click += new System.EventHandler(this.ThaiButton_Click);

@@ -7,35 +7,35 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="images\C1.jpg" />
-    <None Remove="images\C2.jpg" />
-    <None Remove="images\C3.jpg" />
-    <None Remove="images\C4.jpg" />
-    <None Remove="images\J1.jpg" />
-    <None Remove="images\J2.jpg" />
-    <None Remove="images\J3.jpg" />
-    <None Remove="images\K1.jpg" />
-    <None Remove="images\K2.jpg" />
-    <None Remove="images\K3.jpg" />
-    <None Remove="images\T1.jpg" />
-    <None Remove="images\T2.jpg" />
-    <None Remove="images\T3.jpg" />
+    <None Remove="images\Chinese1.jpg" />
+    <None Remove="images\Chinese2.jpg" />
+    <None Remove="images\Chinese3.jpg" />
+    <None Remove="images\Chinese4.jpg" />
+    <None Remove="images\Japanese1.jpg" />
+    <None Remove="images\Japanese2.jpg" />
+    <None Remove="images\Japanese3.jpg" />
+    <None Remove="images\Korean1.jpg" />
+    <None Remove="images\Korean2.jpg" />
+    <None Remove="images\Korean3.jpg" />
+    <None Remove="images\Thai1.jpg" />
+    <None Remove="images\Thai2.jpg" />
+    <None Remove="images\Thai3.jpg" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="images\C1.jpg" />
-    <Resource Include="images\C2.jpg" />
-    <Resource Include="images\C3.jpg" />
-    <Resource Include="images\C4.jpg" />
-    <Resource Include="images\J1.jpg" />
-    <Resource Include="images\J2.jpg" />
-    <Resource Include="images\J3.jpg" />
-    <Resource Include="images\K1.jpg" />
-    <Resource Include="images\K2.jpg" />
-    <Resource Include="images\K3.jpg" />
-    <Resource Include="images\T1.jpg" />
-    <Resource Include="images\T2.jpg" />
-    <Resource Include="images\T3.jpg" />
+    <Resource Include="images\Chinese1.jpg" />
+    <Resource Include="images\Chinese2.jpg" />
+    <Resource Include="images\Chinese3.jpg" />
+    <Resource Include="images\Chinese4.jpg" />
+    <Resource Include="images\Japanese1.jpg" />
+    <Resource Include="images\Japanese2.jpg" />
+    <Resource Include="images\Japanese3.jpg" />
+    <Resource Include="images\Korean1.jpg" />
+    <Resource Include="images\Korean2.jpg" />
+    <Resource Include="images\Korean3.jpg" />
+    <Resource Include="images\Thai1.jpg" />
+    <Resource Include="images\Thai2.jpg" />
+    <Resource Include="images\Thai3.jpg" />
   </ItemGroup>
 
   <ItemGroup>

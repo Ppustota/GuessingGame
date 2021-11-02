@@ -68,9 +68,8 @@ namespace GuessingGame.manager
         {
             if (this.Index == PersonList.Count)
             {
-                //compares images country code and buttons tag to check if answer is correct
-                //tag contains first letter of the country it represents, exmpl: 'J' for Japanese button
-                if (PersonList[Index - 1].Country.Substring(0, 1).Equals(button.Tag.ToString(), StringComparison.Ordinal))
+                //compares persons nationality and buttons tag to check if answer is correct
+                if (PersonList[Index - 1].Nationality.Equals(button.Tag.ToString(), StringComparison.Ordinal))
                 {
                     Points += 20;
                     PointsBox.Text = $"You have {Points} Points";
@@ -89,7 +88,7 @@ namespace GuessingGame.manager
             }
 
 
-            if (PersonList[Index - 1].Country.Substring(0, 1).Equals(button.Tag.ToString(), StringComparison.Ordinal))
+            if (PersonList[Index - 1].Nationality.Equals(button.Tag.ToString(), StringComparison.Ordinal))
             {
                 Points += 20;
                 PointsBox.Text = $"You have {Points} Points";

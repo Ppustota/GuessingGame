@@ -20,11 +20,11 @@ namespace GuessingGame
             {
                 //CountryCode holds the info about nationality of the person on the picture
                 //which is dependent on the name of the image
-                string countryCode = image.Replace(directory, "");
-
+                string countryCode = image.Replace(directory, string.Empty).Replace(format, string.Empty);
+                string nationality = countryCode.Remove(countryCode.Length - 1, 1);
                 list.Add(new Person
                 {
-                    Country = countryCode,
+                    Nationality = nationality,
                     Image = new Bitmap(image)
                 });
             }

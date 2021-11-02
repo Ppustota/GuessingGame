@@ -4,7 +4,9 @@ namespace GuessingGame
 {
     class Person
     { 
-       public string Country { get; set; }
+       public string Nationality { get; set; }
        public Image Image { get; set; }
+
+       
     }
 }
