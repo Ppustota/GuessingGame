@@ -92,7 +92,7 @@ namespace GuessingGame
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Location = new System.Drawing.Point(244, 1);
+            this.pictureBox1.Location = new System.Drawing.Point(250, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(276, 238);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -122,7 +122,7 @@ namespace GuessingGame
             // 
             this.playAgainButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.playAgainButton.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.playAgainButton.Location = new System.Drawing.Point(278, 236);
+            this.playAgainButton.Location = new System.Drawing.Point(296, 232);
             this.playAgainButton.Name = "playAgainButton";
             this.playAgainButton.Size = new System.Drawing.Size(191, 55);
             this.playAgainButton.TabIndex = 6;

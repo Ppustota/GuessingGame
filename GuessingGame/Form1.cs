@@ -1,6 +1,5 @@
 ﻿using GuessingGame.manager;
 using System;
-using System.IO;
 using System.Windows.Forms;
 
 namespace GuessingGame
@@ -9,9 +8,8 @@ namespace GuessingGame
     {
         #region Private members
 
-        private static string currentDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + "\\images\\";
         private bool buttonClicked;
-        private GameManager gameManager;    
+        private ViewManager viewManager;   
         
         #endregion
 
@@ -19,10 +17,7 @@ namespace GuessingGame
          public GuessingGame()
         {
             InitializeComponent();
-            gameManager = new GameManager(personList: PersonUtils.FillPersonList(currentDirectory, ".jpg"), 
-                                          pictureBox: pictureBox1, 
-                                          playAgain: playAgainButton, 
-                                          pointsBox: pointsBox); 
+            viewManager = new ViewManager(pictureBox1, playAgainButton, pointsBox); 
         }
 
         #endregion
@@ -30,17 +25,17 @@ namespace GuessingGame
         #region Event handlers
         private void GuessingGame_Load(object sender, EventArgs e) 
         {
-            gameManager.NewGame();
+            viewManager.StartGame();
         }
 
         private void pictureChange_Tick(object sender, EventArgs e)
         {
-            if (buttonClicked)
+           if (buttonClicked)
             {
                 buttonClicked = false;
                 return;
-            }
-            gameManager.LoadNextPicture();
+            } 
+            viewManager.ShowNextPicture();
         }
 
         private void pictureMove_Tick(object sender, EventArgs e)
@@ -50,28 +45,32 @@ namespace GuessingGame
 
         private void JapaneseButton_Click(object sender, EventArgs e)
         {
-            gameManager.OnUsersAnswer(JapaneseButton, ref buttonClicked);
+            buttonClicked = true;
+            viewManager.ShowPoints(JapaneseButton);
         }
 
 
         private void ChineseButton_Click(object sender, EventArgs e)
         {
-            gameManager.OnUsersAnswer(ChineseButton, ref buttonClicked);
+            buttonClicked = true;
+            viewManager.ShowPoints(ChineseButton);
         }
 
         private void KoreanButton_Click(object sender, EventArgs e)
         {
-            gameManager.OnUsersAnswer(KoreanButton, ref buttonClicked);
+            buttonClicked = true;
+            viewManager.ShowPoints(KoreanButton);
         }
 
         private void ThaiButton_Click(object sender, EventArgs e)
         {
-            gameManager.OnUsersAnswer(ThaiButton, ref buttonClicked);
+            buttonClicked = true;
+            viewManager.ShowPoints(ThaiButton);
         }
 
         private void playAgainButton_Click(object sender, EventArgs e)
         {
-            gameManager.NewGame();
+            viewManager.StartGame();
         }
         #endregion
 
