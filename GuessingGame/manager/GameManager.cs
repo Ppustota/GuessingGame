@@ -54,7 +54,9 @@ namespace GuessingGame.manager
         //Manages Points system
         public void ResolvePoints(Button button)
         {
-            if (PersonList[Index - 1].Nationality.Equals(button.Tag.ToString(), StringComparison.Ordinal))
+            //Check if users answer is correct
+            //tag of button has value about the country it represents
+            if (PersonList[Index - 1].IsFrom(button.Tag.ToString()))
             {
                 Points += 20;
             }

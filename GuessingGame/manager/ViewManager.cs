@@ -19,6 +19,7 @@ namespace GuessingGame.manager
             PlayAgain = playAgain;
             PointsBox = pointsBox;
         }
+        //Displays next picture or ends game if last picture was displayed
         public void ShowNextPicture()
         {
             PictureBox.Location = new System.Drawing.Point(250, 0);
@@ -34,6 +35,7 @@ namespace GuessingGame.manager
                 PictureBox.Image = null;
             }
         }
+        //Shows current points of user
         public void ShowPoints(Button button)
         {
             PictureBox.Location = new System.Drawing.Point(250, 0);
@@ -43,7 +45,7 @@ namespace GuessingGame.manager
             if (image == null)
                 PlayAgain.Visible = true;
         }
-
+        //Prepares environement to start new game 
         public void StartGame()
         {
             PlayAgain.Visible = false;
