@@ -45,6 +45,10 @@ namespace GuessingGame.manager
             if (image == null)
                 PlayAgain.Visible = true;
         }
+        public void MovePictureBox()
+        {
+            PictureBox.Location = new System.Drawing.Point(PictureBox.Location.X, PictureBox.Location.Y + 9);
+        }
         //Prepares environement to start new game 
         public void StartGame()
         {

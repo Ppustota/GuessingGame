@@ -40,7 +40,7 @@ namespace GuessingGame
 
         private void pictureMove_Tick(object sender, EventArgs e)
         {
-            pictureBox1.Location = new System.Drawing.Point(pictureBox1.Location.X, pictureBox1.Location.Y + 9); 
+            viewManager.MovePictureBox(); 
         }
 
         private void JapaneseButton_Click(object sender, EventArgs e)
@@ -74,5 +74,9 @@ namespace GuessingGame
         }
         #endregion
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
